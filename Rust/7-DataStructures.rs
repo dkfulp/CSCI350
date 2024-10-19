@@ -200,6 +200,38 @@ fn tuples(){
 
 }
 
+fn vectors(){
+    let mut a = Vec::new();
+    a.push(1);
+    a.push(2);
+    a.push(3);
+
+    println!("a = {:?}", a);
+    // Can add and display vectors
+
+    let index:usize = 0;
+    println!("a[0] = {}", a[index]);
+    // Can display a specific value from the vector
+    // If you go out of bounds you can panic the program and crash it
+
+    match a.get(6){
+        Some(x) => println!("a[6] = {}", x),
+        None => println!("Error, No Such Element")
+    }
+    // Returns an Option Type that checks to see if it is a value or not
+
+    for x in &a {
+        println!("{}", x);
+    }
+    // You can iterate over elements as normal with a for loop
+
+    let last_ele = a.pop().unwrap_or(0); // Returns an Option Type as well
+    println!("Last Element is {:?}, a = {:?}", last_ele, a);
+    // If a value returns a Some you will need to unwrap the value
+    // There are many ways to go about handling that
+    // Including using a match, unwrap, expect, if let, unwrap_or, and unwrap_or_else
+}
+
 fn main() {
     structures();
     enums();
@@ -207,4 +239,5 @@ fn main() {
     option_T();
     arrays();
     tuples();
+    vectors();
 }
