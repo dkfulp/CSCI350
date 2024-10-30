@@ -49,6 +49,18 @@ class Program
         Console.WriteLine("Char: " + letter);
         Console.WriteLine("Bool: " + isTrue);
 
+        // Implicitly typed variables
+        var number = 10;         // int
+        var message = "Hello";   // string
+        var pi = 3.14159;        // double
+        var isActive = true;     // bool
+
+        // Displaying the values and inferred types
+        Console.WriteLine($"number (int): {number}");
+        Console.WriteLine($"message (string): {message}");
+        Console.WriteLine($"pi (double): {pi}");
+        Console.WriteLine($"isActive (bool): {isActive}");
+
 
         /*****************************************************************************/
         // PART 2: Type Conversion and Casting
